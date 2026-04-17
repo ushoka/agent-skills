@@ -18,4 +18,10 @@ Published skills live under [skills/](skills/). Do not hardcode the current inve
 Whenever the user wants to create a new skill or substantially edit an existing one, use the `skill-creator` skill first. That skill owns the authoring workflow and quality bar.
 Whenever the published skill inventory changes under `skills/`, update the `README.md` `## Skills` section in the same task so the public list stays in sync.
 
+## Publishing after pushing skill changes
+
+After any change under `skills/` has been **pushed to GitHub**, run `gh skill publish` from the repository root so skills are validated against the spec and published appropriately. If validation reports fixable metadata issues, re-run with `gh skill publish --fix`. This step is part of the same workflow as committing and pushing skill edits—do not skip it when finishing a skill change that has gone to the remote.
+
+Requires GitHub CLI **v2.90.0** or later (`gh skill` is documented in the [GitHub CLI agent skills changelog](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/)).
+
 Keep this file focused on repository-level context rather than duplicating skill-writing instructions.
