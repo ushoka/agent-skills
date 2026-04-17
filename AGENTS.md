@@ -20,7 +20,7 @@ Whenever the published skill inventory changes under `skills/`, update the `READ
 
 ## Publishing after pushing skill changes
 
-After any change under `skills/` has been **pushed to GitHub**, run `gh skill publish` from the repository root so skills are validated against the spec and published appropriately. If validation reports fixable metadata issues, re-run with `gh skill publish --fix`. This step is part of the same workflow as committing and pushing skill edits—do not skip it when finishing a skill change that has gone to the remote.
+After any change under `skills/` has been **pushed to GitHub**, run `gh skill publish` from the repository root so skills are validated against the spec and published via a GitHub release. When publishing, automatically choose the next semantic version tag unless the user explicitly asked for a specific version: bump `PATCH` for wording or metadata-only fixes, `MINOR` for backward-compatible skill additions or expansions, and `MAJOR` for breaking behavior changes, removals, or renames. If you want a non-interactive publish, pass that next version explicitly with `gh skill publish --tag vX.Y.Z`. If validation reports fixable metadata issues, re-run with `gh skill publish --fix` before publishing. This step is part of the same workflow as committing and pushing skill edits—do not skip it when finishing a skill change that has gone to the remote.
 
 Requires GitHub CLI **v2.90.0** or later (`gh skill` is documented in the [GitHub CLI agent skills changelog](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/)).
 
