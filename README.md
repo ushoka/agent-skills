@@ -17,8 +17,8 @@ Each skill lives in its own directory with a `SKILL.md` at the root.
 # Install a specific skill
 gh skill install ushoka/agent-skills <skill-name>
 
-# Example: install commit
-gh skill install ushoka/agent-skills commit
+# Example: install create-pr
+gh skill install ushoka/agent-skills create-pr
 ```
 
 ### Skills CLI
@@ -27,14 +27,8 @@ gh skill install ushoka/agent-skills commit
 # Install a specific skill
 npx skills add ushoka/agent-skills --skill <skill-name>
 
-# Example: install commit
-npx skills add ushoka/agent-skills --skill commit
-```
-
-To install all skills from the repo, omit `--skill`:
-
-```sh
-npx skills add ushoka/agent-skills
+# Example: install create-pr
+npx skills add ushoka/agent-skills --skill create-pr
 ```
 
 ### Agent Package Manager (APM)
@@ -44,7 +38,7 @@ npx skills add ushoka/agent-skills
 apm install ushoka/agent-skills/skills/<skill-name>
 
 # Example: install commit
-apm install ushoka/agent-skills/skills/commit
+apm install ushoka/agent-skills/skills/create-pr
 ```
 
 Or declare them in `apm.yml` and run `apm install`:
@@ -54,6 +48,6 @@ name: your-project
 version: 1.0.0
 dependencies:
   apm:
-    # Example: install commit
-    - ushoka/agent-skills/skills/commit
+    # Example: install create-pr
+    - ushoka/agent-skills/skills/create-pr
 ```
