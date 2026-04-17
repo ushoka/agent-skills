@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Break working changes into smaller, semantic commits with Conventional Commits messages so the history reads cleanly. Use this skill whenever the user asks to commit working changes — "commit this", "commit these changes", "make a commit", "split this into commits", "commit my work" — even when they don't explicitly ask for a split. The default behavior is to propose a multi-commit plan, get approval, then execute. Do not use for push, PR creation, rebase, or history rewriting beyond the initial commits.
+description: Break working changes into smaller, semantic commits with Conventional Commits messages so the history reads cleanly. Use this skill whenever the user asks to commit working changes — "commit this", "commit these changes", "make a commit", "split this into commits", "commit my work" — even when they don't explicitly ask for a split. The default behavior is to propose a multi-commit plan, get approval, then execute; if there's only one sensible commit, say so and proceed automatically. Do not use for push, PR creation, rebase, or history rewriting beyond the initial commits.
 ---
 
 # Commit
@@ -18,7 +18,7 @@ The user wants the *output* (clean history), not a lecture on commit hygiene. Be
 1. **Survey** the working tree.
 2. **Group** changes by logical concern.
 3. **Order** commits so each one makes sense on top of the last.
-4. **Propose** the plan and wait for approval.
+4. **Propose** multi-commit plans and wait for approval when needed.
 5. **Execute** one commit at a time, using `git add -p` when a file spans concerns.
 6. **Report** what happened.
 
@@ -55,9 +55,9 @@ Foundations first, so each commit ideally builds and makes sense standalone:
 
 This isn't a rigid template — respect actual code dependencies. If a test file imports something introduced in a `feat` commit, the test commit must come after. Mentally walk through: "if I checked out each commit in order, would the repo be in a sensible state?"
 
-### 4. Propose the plan
+### 4. Propose the plan when needed
 
-Before touching staging, present a numbered plan:
+If you found **multiple commits**, before touching staging present a numbered plan:
 
 ```
 Proposed commits:
@@ -79,9 +79,20 @@ Then ask: "Proceed with these commits, or adjust?"
 
 Wait for approval. If the user asks for edits (merge two, rename a message, move a file), revise and re-show before proceeding.
 
+If you found **exactly one sensible commit**, don't stop for approval just to ask permission for a no-op choice. Briefly state that the working tree is one coherent concern, show the commit you plan to make, and proceed directly to execution.
+
+Example:
+
+```
+One coherent concern; proceeding with a single commit:
+
+1. fix: handle timezone offset in date comparison
+   src/date.ts, src/date-utils.ts, tests/date.test.ts
+```
+
 ### 5. Execute
 
-Once approved:
+Once approved, or immediately for the single-commit path:
 
 1. **Reset staging** so you start from a known state: `git reset` (not `--hard` — preserves working tree).
 2. For each commit in order:
