@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(git -C /Users/ushoka/dev/agent-skills remote -v)"
-    ]
-  }
-}

@@ -1,0 +1,3 @@
+# Claude Code — machine/local settings (keep skills and project config tracked)
+.claude/settings.json
+.claude/settings.local.json
