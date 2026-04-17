@@ -15,18 +15,16 @@ To install a skill from a published skills repository, use either GitHub CLI or 
 
 ```sh
 # Install a specific skill with GitHub CLI
-gh skill install <owner>/<repo> <skill-name>
+gh skill install ushoka/agent-skills <skill-name>
 
-# Example: install for Cursor at user scope
-gh skill install <owner>/<repo> <skill-name> --agent cursor --scope user
+# Example: install commit for Cursor at user scope
+gh skill install ushoka/agent-skills commit --agent cursor --scope user
 ```
 
 ```sh
 # Install from a repo with the Skills CLI
-npx skills add <owner>/<repo>
+npx skills add ushoka/agent-skills
 
 # Install a specific skill from a multi-skill repo
-npx skills add <owner>/<repo> --skill <skill-name>
+npx skills add ushoka/agent-skills --skill commit
 ```
-
-Replace `<owner>/<repo>` and `<skill-name>` with the repository and skill you want to install.
