@@ -17,8 +17,8 @@ Each skill lives in its own directory with a `SKILL.md` at the root.
 # Install a specific skill
 gh skill install ushoka/agent-skills <skill-name>
 
-# Example: install commit for Cursor at user scope
-gh skill install ushoka/agent-skills commit --agent cursor --scope user
+# Example: install commit
+gh skill install ushoka/agent-skills commit
 ```
 
 ### Skills CLI
