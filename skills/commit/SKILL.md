@@ -132,6 +132,7 @@ Conventional Commits: `<type>: <description>`
 
 Types: `feat`, `fix`, `refactor`, `docs`, `test`, `chore`, `perf`, `ci`
 
+- Write commit messages in English by default. Only use another language when the user explicitly asks for it.
 - Imperative mood: "add X", not "added X" or "adds X"
 - Lowercase after the colon
 - No trailing period
