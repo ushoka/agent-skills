@@ -6,6 +6,7 @@ Personal collection of agent skills.
 
 - [`commit`](skills/commit/) - Break working changes into smaller, semantic commits with Conventional Commits messages.
 - [`create-pr`](skills/create-pr/) - Create a GitHub pull request from the current branch, including a drafted title and body.
+- [`make-it-easy`](skills/make-it-easy/) - Turn a user-provided task into one practical, low-friction, sustainable plan without carrying out the task.
 
 ## Usage
 
